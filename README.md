@@ -1,4 +1,4 @@
-# Overvoew
+# Overview
 Quick util page to check if a undirected graph is Hamiltonian. You can paste an adjacency matrix and get a quick dfs check (or various other algos). 
 
 ## Usage
