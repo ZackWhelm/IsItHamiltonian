@@ -1,5 +1,5 @@
 # Overview
-Quick util page to check if a undirected graph is Hamiltonian. You can paste an adjacency matrix and get a quick dfs check (or various other algos). 
+Quick util page to check if a undirected graph is a Hamiltonian cycle. You can paste an adjacency matrix and get a quick dfs check (or various other algos). 
 
 ## Usage
 - Feed an adjaceny matrix in, get a yes or no result out. 
@@ -16,4 +16,9 @@ Input formated as follows:
 0,0,1,0
 0,0,0,1
 </code>
+
+## TODO's
+- Going to change this to just be paths.
+- Visual graph editor for funs.
+
 
