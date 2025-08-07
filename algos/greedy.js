@@ -18,5 +18,5 @@ export function isHamiltonianGreedy(graph) {
     if (!found) return false;
   }
 
-  return graph[path[path.length - 1]][path[0]] === 1;
+  return true;
 }

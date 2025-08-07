@@ -125,3 +125,16 @@ button:active {
   margin-bottom: 10px;
   white-space: pre;
 }
+
+a {
+  color:var(--primary);
+  text-decoration: none;
+}
+
+a:visited,
+a:hover,
+a:active,
+a:focus {
+  color: var(--primary);
+  text-decoration: none;
+}

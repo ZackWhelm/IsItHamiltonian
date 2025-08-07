@@ -6,8 +6,7 @@ export function isHamiltonianExponential(graph) {
     for (let i = 0; i < perm.length - 1; i++) {
       if (graph[perm[i]][perm[i + 1]] !== 1) return false;
     }
-
-    return graph[perm[perm.length - 1]][perm[0]] === 1;
+    return true;
   }
 
   function* permutations(arr, l = 0) {

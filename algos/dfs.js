@@ -7,9 +7,7 @@ export function isHamiltonianDFS(graph) {
     path.push(v);
     visited[v] = true;
 
-    if (depth === n) {
-      return graph[path[path.length - 1]][path[0]] === 1;
-    }
+    if (depth === n) return true;
 
     for (let u = 0; u < n; u++) {
       if (graph[v][u] === 1 && !visited[u]) {
