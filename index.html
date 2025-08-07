@@ -53,7 +53,7 @@ function customAlgo(matrix) {
         for (let i = 0; i < perm.length - 1; i++) {
             if (matrix[perm[i]][perm[i + 1]] !== 1) return false;
         }
-        return matrix[perm[perm.length - 1]][perm[0]] === 1;
+        return true;
     }
 
     function* permutations(arr, l = 0) {
