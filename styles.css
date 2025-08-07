@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --primary: rgb(252, 193, 55);
+  --secondary: rgb(255, 255, 255);
+  --background: rgb(40, 40, 40);
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--background);
+  color: var(--secondary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 0.2em;
+  color: var(--primary);
+  text-align: center;
+}
+
+p {
+  font-weight: 400;
+  max-width: 600px;
+  text-align: center;
+}
+
+button {
+  margin: 5px;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background-color: var(--primary);
+  color: var(--background);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+button:hover {
+  background-color: rgb(235, 170, 30);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0,0,0,0.4);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#matrixInput {
+  width: 320px;
+  height: 160px;
+  font-family: monospace;
+  font-size: 1rem;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  resize: vertical;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  background-color: #222;
+  color: var(--secondary);
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+#algorithmSelect {
+  margin: 10px 5px 15px 5px;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  border: none;
+  background-color: #555;
+  color: var(--secondary);
+  cursor: pointer;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
+#algorithmSelect:hover {
+  background-color: #777;
+}
+
+#result, #timeTaken {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: var(--primary);
+}
+
+#batchTestResults {
+  max-height: 400px;
+  overflow-y: auto;
+  background: #222;
+  padding: 10px;
+  width: 90vw;
+  max-width: 700px;
+  border-radius: 6px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+  font-family: monospace;
+  white-space: pre-wrap;
+  color: var(--secondary);
+}

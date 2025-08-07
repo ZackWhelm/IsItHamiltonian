@@ -31,7 +31,7 @@ document.getElementById('checkButton').addEventListener('click', function () {
     `${result ? "✅" : "❌"}`;
 
     document.getElementById('timeTaken').textContent =
-    `it took ${duration.toFixed(2)} ms using ${selectedAlgorithm}) for browser to solve`;
+    `it took ${duration.toFixed(2)} ms using ${selectedAlgorithm} for browser to solve`;
 });
 
 

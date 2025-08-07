@@ -3,16 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <title>Is it Hamiltonian?</title>
-    <style>
-        textarea {
-        width: 300px;
-        height: 150px;
-        font-family: monospace;
-        }
-        button {
-        margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <h1>Is it Hamiltonian?</h1>
@@ -43,7 +37,7 @@
     <p id="timeTaken"></p>
     <h1>Batch Testing</h1>
     <button id="testDevButton">Test 100 Random Matrices</button>
-    <pre id="batchTestResults" style="max-height: 400px; overflow-y: auto; background: #f0f0f0; padding: 10px;"></pre>
+    <pre id="batchTestResults"></pre>
     <script type="module" src="main.js"></script>
 </body>
 </html>
