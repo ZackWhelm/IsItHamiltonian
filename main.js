@@ -8,30 +8,50 @@ const algorithmMap = {
   greedy: isHamiltonianGreedy,
 };
 
-document.getElementById('checkButton').addEventListener('click', function () {
-  const input = document.getElementById('matrixInput').value;
-  const matrix = input
-    .trim()
-    .split('\n')
-    .map(row => row.split(',').map(Number));
+document.getElementById('checkButton').addEventListener('click', () => {
+  const matrixInput = document.getElementById('matrixInput').value;
+  const selectedAlgo = document.getElementById('algorithmSelect').value;
+  const resultEl = document.getElementById('result');
+  const timeTakenEl = document.getElementById('timeTaken');
 
-  const selectedAlgorithm = document.getElementById('algorithmSelect').value;
-  const algorithmFn = algorithmMap[selectedAlgorithm];
-
-  if (!algorithmFn) {
-    document.getElementById('result').textContent = `❌ Unknown algorithm: ${selectedAlgorithm}`;
+  let matrix;
+  try {
+    matrix = matrixInput
+      .trim()
+      .split('\n')
+      .map(row => row.split(',').map(Number));
+  } catch (e) {
+    resultEl.textContent = "❌ Invalid matrix.";
     return;
   }
 
   const start = performance.now();
-  const result = algorithmFn(matrix);
-  const duration = performance.now() - start;
+  let result;
 
-  document.getElementById('result').textContent =
-    `${result ? "✅" : "❌"}`;
+  try {
+    if (selectedAlgo === 'dfs') {
+      result = isHamiltonianDFS(matrix);
+    } else if (selectedAlgo === 'exponential') {
+      result = isHamiltonianExponential(matrix);
+    } else if (selectedAlgo === 'greedy') {
+      result = isHamiltonianGreedy(matrix);
+    } else if (selectedAlgo === 'custom') {
+      const codeInput = document.getElementById('customAlgoInput').value;
+      const customFunc = new Function(`${codeInput}; return customAlgo;`)();
+      result = customFunc(matrix);
+    } else {
+      resultEl.textContent = "❌ Unknown algorithm.";
+      return;
+    }
+  } catch (e) {
+    resultEl.textContent = "❌ Error running algorithm.";
+    console.error(e);
+    return;
+  }
 
-    document.getElementById('timeTaken').textContent =
-    `it took ${duration.toFixed(2)} ms using ${selectedAlgorithm} for browser to solve`;
+  const end = performance.now();
+  resultEl.textContent = result ? "✅ Hamiltonian" : "❌ Not Hamiltonian";
+  timeTakenEl.textContent = `Time: ${(end - start).toFixed(2)}ms`;
 });
 
 
@@ -131,3 +151,14 @@ document.getElementById('testDevButton').addEventListener('click', async () => {
     appendLine(`- ${name}: ${count} inconsistent result(s) out of ${testCount}`);
   }
 });
+
+const algorithmSelect = document.getElementById('algorithmSelect');
+const customAlgoSection = document.getElementById('customAlgoSection');
+
+// Show/hide custom algo section on algorithm change
+algorithmSelect.addEventListener('change', () => {
+    customAlgoSection.style.display = algorithmSelect.value === 'custom' ? 'block' : 'none';
+});
+
+// Optional: trigger it on load in case someone refreshes while custom is selected
+customAlgoSection.style.display = algorithmSelect.value === 'custom' ? 'block' : 'none';

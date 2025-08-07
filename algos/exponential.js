@@ -6,7 +6,7 @@ export function isHamiltonianExponential(graph) {
     for (let i = 0; i < perm.length - 1; i++) {
       if (graph[perm[i]][perm[i + 1]] !== 1) return false;
     }
-    // Check if it forms a cycle
+
     return graph[perm[perm.length - 1]][perm[0]] === 1;
   }
 

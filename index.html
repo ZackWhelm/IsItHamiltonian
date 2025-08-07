@@ -30,11 +30,48 @@
         <option value="dfs">DFS</option>
         <option value="exponential">Exponential</option>
         <option value="greedy">Greedy (Approx)</option>
+        <option value="custom">Custom (User Script)</option>
     </select>
 
     <button id="checkButton">Check</button>
     <p id="result"></p>
     <p id="timeTaken"></p>
+    <div id="customAlgoSection" style="display: none;">
+        <h2>Custom Algo To Run (JS ONLY BOYS AND GIRLS)</h2>
+        <p>You can write a function <code>customAlgo(matrix)</code> that returns <code>true</code> or <code>false</code>.</p>
+        <textarea id="customAlgoInput">
+function customAlgo(matrix) {
+    // bad algo example - you have to use customAlgo definition above
+    const n = matrix.length;
+    const nodes = Array.from({ length: n }, (_, i) => i);
+
+    function isHamiltonianPath(perm) {
+        for (let i = 0; i < perm.length - 1; i++) {
+            if (matrix[perm[i]][perm[i + 1]] !== 1) return false;
+        }
+        return matrix[perm[perm.length - 1]][perm[0]] === 1;
+    }
+
+    function* permutations(arr, l = 0) {
+        if (l === arr.length - 1) {
+            yield arr.slice();
+        } else {
+            for (let i = l; i < arr.length; i++) {
+                [arr[l], arr[i]] = [arr[i], arr[l]];
+                yield* permutations(arr, l + 1);
+                [arr[l], arr[i]] = [arr[i], arr[l]];
+            }
+        }
+    }
+
+    for (const perm of permutations(nodes)) {
+        if (isHamiltonianPath(perm)) return true;
+    }
+
+    return false;
+}
+        </textarea>
+    </div>
     <h1>Batch Testing</h1>
     <button id="testDevButton">Test 100 Random Matrices</button>
     <pre id="batchTestResults"></pre>
