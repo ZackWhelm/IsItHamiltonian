@@ -3,8 +3,8 @@ Quick util page to check if a undirected graph is Hamiltonian. You can paste an 
 
 ## Usage
 - Feed an adjaceny matrix in, get a yes or no result out. 
-- Feed an csv file in oof a adjaceny matrix in, get a yes or no result out.**(TODO)**
-- Generate a random matrix of n size, get a yes or no result.** (TODO)**
+- Feed an csv file in of a adjaceny matrix in, get a yes or no result out.**(TODO)**
+- Generate a random matrix of n size, get a yes or no result. **(TODO)**
 
 ### Adjaceny Matrix
 Wut is it? https://en.wikipedia.org/wiki/Adjacency_matrix
