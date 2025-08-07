@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Is it Hamiltonian?</title>
+    <style>
+        textarea {
+        width: 300px;
+        height: 150px;
+        font-family: monospace;
+        }
+        button {
+        margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Is it Hamiltonian?</h1>
+    <p>Enter an adjacency matrix (comma-separated rows) or generate a random adjaceny matrix with node count</p>
+    <div>
+        <button class="gen-btn" data-nodes="4">4</button>
+        <button class="gen-btn" data-nodes="6">6</button>
+        <button class="gen-btn" data-nodes="8">8</button>
+        <button class="gen-btn" data-nodes="10">10</button>
+    </div>
+    <br>
+    <textarea id="matrixInput">
+1,0,0,0
+0,1,0,0
+0,0,1,0
+0,0,0,1
+        </textarea>
+    <br />
+    <label for="algorithmSelect">Select Algorithm:</label>
+    <select id="algorithmSelect">
+        <option value="dfs">DFS</option>
+        <option value="exponential">Exponential</option>
+        <option value="greedy">Greedy (Approx)</option>
+    </select>
+
+    <button id="checkButton">Check</button>
+    <p id="result"></p>
+    <p id="timeTaken"></p>
+    <h1>Batch Testing</h1>
+    <button id="testDevButton">Test 100 Random Matrices</button>
+    <pre id="batchTestResults" style="max-height: 400px; overflow-y: auto; background: #f0f0f0; padding: 10px;"></pre>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
