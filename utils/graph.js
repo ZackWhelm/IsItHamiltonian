@@ -280,6 +280,22 @@ const matrixInputEl = document.getElementById('matrixInput');
 
 matrixInputEl.addEventListener('input', updateGraphFromMatrix);
 
+document.getElementById('csvUpload').addEventListener('change', function(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const contents = e.target.result.trim();
+    document.getElementById('matrixInput').value = contents;
+
+    if (typeof updateGraphFromMatrix === 'function') {
+      updateGraphFromMatrix();
+    }
+  };
+  reader.readAsText(file);
+});
+
 function updateGraphFromMatrix() {
     const text = document.getElementById("matrixInput").value.trim();
     const rows = text.split("\n").map(row => row.split(",").map(Number));

@@ -85,3 +85,7 @@ algorithmSelect.addEventListener('change', () => {
 });
 
 customAlgoSection.style.display = algorithmSelect.value === 'custom' ? 'block' : 'none';
+
+document.getElementById('uploadCsvBtn').addEventListener('click', () => {
+  document.getElementById('csvUpload').click();
+});

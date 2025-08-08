@@ -2,8 +2,9 @@
 Quick util page to check if a undirected graph has a hamiltonian path. You can paste an adjacency matrix and get a quick dfs check (or various other algos). 
 
 ## Usage
-- Feed an adjaceny matrix in, get a yes or no result out. 
-- Feed an csv file in of a adjaceny matrix in, get a yes or no result out.**(TODO)**
+- Feed an adjaceny matrix in, get a yes or no result.
+- Feed an csv file in of a adjaceny matrix in, get a yes or no result.
+- Draw a graph, get a yes or no result.
 
 ### Adjaceny Matrix
 Wut is it? https://en.wikipedia.org/wiki/Adjacency_matrix
@@ -27,5 +28,4 @@ A matrix in adjaceny format can be stored in csv and input via input csv file bu
 - I wanted something an ml web agent could easily use to test algorithims. 
 
 ## TODOs and Ideas
-- CSV Input
-- Maybe render the path on input submission?
+- Maybe render the path on input submission? (for now not going to do this but might revist)
