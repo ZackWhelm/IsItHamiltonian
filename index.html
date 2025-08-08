@@ -15,7 +15,7 @@
     Hamiltonian path</a>?
     </p>
     <p>Enter an adjacency matrix (via comma-separated rows) or play around in the graph editor to create an undirected graph.</p>
-    <br>
+
     <h3>Adjaceny Matrix Input</h3>
     <textarea id="matrixInput">
 1,0,0,0
@@ -23,9 +23,15 @@
 0,0,1,0
 0,0,0,1
         </textarea>
-    <br />
-    <h3>Graph Editor</h3>
-    <canvas id="graphCanvas" width="800" height="500" style="border:1px solid black;"></canvas>
+    <h3>Visual Editor</h3>
+    <p>
+        <small>Click on a node to select it, then click on another to add an edge.</small>
+        <br>
+        <small>Click on a node to select it, then hit the x near it to delete.</small>
+        <br>
+        <small>Click on an edge to select it, then hit the x in the middle of it to delete.</small>
+    </p>
+    <canvas id="graphCanvas" width="800" height="500"></canvas>
     <h3>Algorithm Selection</h3>
     <label for="algorithmSelect">Algorithm:</label>
     <select id="algorithmSelect">

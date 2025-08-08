@@ -45,7 +45,7 @@ document.getElementById('checkButton').addEventListener('click', () => {
 
   const end = performance.now();
   resultEl.textContent = result ? "✅ Hamiltonian" : "❌ Not Hamiltonian";
-  timeTakenEl.textContent = `Time: ${(end - start).toFixed(2)}ms`;
+  timeTakenEl.textContent = `Time it took for browser to compute: ${(end - start).toFixed(2)}ms`;
 });
 
 
