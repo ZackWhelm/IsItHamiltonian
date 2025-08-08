@@ -4,7 +4,6 @@ Quick util page to check if a undirected graph has a hamiltonian path. You can p
 ## Usage
 - Feed an adjaceny matrix in, get a yes or no result out. 
 - Feed an csv file in of a adjaceny matrix in, get a yes or no result out.**(TODO)**
-- Generate a random matrix of n size, get a yes or no result. **(TODO)**
 
 ### Adjaceny Matrix
 Wut is it? https://en.wikipedia.org/wiki/Adjacency_matrix
@@ -17,8 +16,16 @@ Input formated as follows:
 0,0,0,1
 </code>
 
-## TODO's
-- Going to change this to just be paths.
-- Visual graph editor for funs.
+### CSV File
+Wut is it? https://en.wikipedia.org/wiki/Adjacency_matrix](https://en.wikipedia.org/wiki/Comma-separated_values)
+
+A matrix in adjaceny format can be stored in csv and input via input csv file button.
 
 
+## Why does this exist
+- I wanted a quick free visual tool to play around with graphs and quickly verify.
+- I wanted something an ml web agent could easily use to test algorithims. 
+
+## TODOs and Ideas
+- CSV Input
+- Maybe render the path on input submission?
