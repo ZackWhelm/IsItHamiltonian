@@ -275,3 +275,42 @@ function updateMatrixTextarea() {
     const matrixText = matrix.map(row => row.join(",")).join("\n");
     document.getElementById("matrixInput").value = matrixText;
 }
+
+const matrixInputEl = document.getElementById('matrixInput');
+
+matrixInputEl.addEventListener('input', updateGraphFromMatrix);
+
+function updateGraphFromMatrix() {
+    const text = document.getElementById("matrixInput").value.trim();
+    const rows = text.split("\n").map(row => row.split(",").map(Number));
+    const size = rows.length;
+
+    if (!rows.every(row => row.length === size)) return;
+
+    nodes = [];
+    edges = [];
+
+    const centerX = canvas.width / 2;
+    const centerY = canvas.height / 2;
+    const radius = Math.min(centerX, centerY) - 50;
+    for (let i = 0; i < size; i++) {
+        const angle = (2 * Math.PI * i) / size;
+        const x = centerX + radius * Math.cos(angle);
+        const y = centerY + radius * Math.sin(angle);
+        nodes.push({ id: i, x, y });
+    }
+
+    for (let i = 0; i < size; i++) {
+        for (let j = i + 1; j < size; j++) {
+            if (rows[i][j] === 1) {
+                edges.push([i, j]);
+            }
+        }
+    }
+
+    selectedNode = null;
+    selectedEdge = null;
+    drawGraph();
+}
+
+updateGraphFromMatrix();

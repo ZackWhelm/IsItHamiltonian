@@ -11,17 +11,12 @@
 <body>
     <h1>Is it Hamiltonian?</h1>
     <p>
-    Or rather, does it have a <a href="https://mathworld.wolfram.com/HamiltonianPath.html" target="_blank" rel="noopener">
+    Wanna know if a graph has a <a href="https://mathworld.wolfram.com/HamiltonianPath.html" target="_blank" rel="noopener">
     Hamiltonian path</a>?
     </p>
-    <p>Enter an adjacency matrix (comma-separated rows) or generate a random adjaceny matrix with node count</p>
-    <div>
-        <button class="gen-btn" data-nodes="4">4</button>
-        <button class="gen-btn" data-nodes="6">6</button>
-        <button class="gen-btn" data-nodes="8">8</button>
-        <button class="gen-btn" data-nodes="10">10</button>
-    </div>
+    <p>Enter an adjacency matrix (via comma-separated rows) or play around in the graph editor to create an undirected graph.</p>
     <br>
+    <h3>Adjaceny Matrix Input</h3>
     <textarea id="matrixInput">
 1,0,0,0
 0,1,0,0
@@ -29,9 +24,10 @@
 0,0,0,1
         </textarea>
     <br />
-    <h1>Graph Editor</h1>
+    <h3>Graph Editor</h3>
     <canvas id="graphCanvas" width="800" height="500" style="border:1px solid black;"></canvas>
-    <label for="algorithmSelect">Select Algorithm:</label>
+    <h3>Algorithm Selection</h3>
+    <label for="algorithmSelect">Algorithm:</label>
     <select id="algorithmSelect">
         <option value="dfs">DFS</option>
         <option value="exponential">Exponential</option>
@@ -43,7 +39,7 @@
     <p id="result"></p>
     <p id="timeTaken"></p>
     <div id="customAlgoSection" style="display: none;">
-        <h2>Custom Algo To Run (JS ONLY BOYS AND GIRLS)</h2>
+        <h3>Custom Algo To Run (js only atm)</h3>
         <p>You can write a function <code>customAlgo(matrix)</code> that returns <code>true</code> or <code>false</code>.</p>
         <textarea id="customAlgoInput">
 function customAlgo(matrix) {
@@ -78,9 +74,6 @@ function customAlgo(matrix) {
 }
         </textarea>
     </div>
-    <h1>Batch Testing</h1>
-    <button id="testDevButton">Test 100 Random Matrices</button>
-    <pre id="batchTestResults"></pre>
     <script type="module" src="main.js"></script>
     <script type="module" src="utils/graph.js"></script>
 </body>
