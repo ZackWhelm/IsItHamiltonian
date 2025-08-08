@@ -29,6 +29,8 @@
 0,0,0,1
         </textarea>
     <br />
+    <h1>Graph Editor</h1>
+    <canvas id="graphCanvas" width="800" height="500" style="border:1px solid black;"></canvas>
     <label for="algorithmSelect">Select Algorithm:</label>
     <select id="algorithmSelect">
         <option value="dfs">DFS</option>
@@ -80,5 +82,6 @@ function customAlgo(matrix) {
     <button id="testDevButton">Test 100 Random Matrices</button>
     <pre id="batchTestResults"></pre>
     <script type="module" src="main.js"></script>
+    <script type="module" src="utils/graph.js"></script>
 </body>
 </html>
